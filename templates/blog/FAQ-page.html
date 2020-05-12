@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for FAQ in FAQS %}
+        <p>
+            <a class='btn btn-secondary w-100' data-toggle='collapse' href="#{{ FAQ.FAQ_name }}" role='button' aria-expanded='false' aria-controls='{{ FAQ.FAQ_name}'>
+                {{ FAQ.FAQ_en_text }}
+            </a>
+        </p>
+        <div class='collapse mb-2' id='{{ FAQ.FAQ_name }}'>
+            <div class='card card-body bg-light'>
+                <p>{{ FAQ.FAQ_en_answer }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for skill in skills %}
+        <p>
+            <a class='btn btn-secondary w-100' data-toggle='collapse' href="#{{ skill }}" role='button' aria-expanded='false' aria-controls='{{ skill }}'>
+                <span>{{ skill }} {{skill.rating}}</span>
+            </a>
+        </p>
+        <div class='collapse mb-2' id='{{ skill }}'>
+            <div class='card card-body bg-light'>
+                <ul>
+                    {% for description in skill.skill_description.all %}
+                        <li>{{ description }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

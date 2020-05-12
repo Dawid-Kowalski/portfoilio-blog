@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class='border'>
+        <div class='p-2'>
+            {% for portal in portals %}
+                <h3 class='bg-dark text-light p-2 d-flex justify-content-between'><p>{{ portal.portal_name }}</p></h3>
+                <div class='row'>
+                    <div class='col-6'>
+                        <a href='{{ portal.profile_url }}'>
+                            <img class='w-100' src='{{ portal.image.url }}'>
+                        </a>
+                    </div>
+                    <div class='col-6 align-self-center'>
+                        <p>{{ portal.description_en }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

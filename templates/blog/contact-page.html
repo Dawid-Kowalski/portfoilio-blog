@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Contact</h4>
+<form method='post'>
+  {% csrf_token %}
+  <div class='form-group'>
+    <label for='email'>Email address:</label>
+    {{ form.from_email }}
+  </div>
+  <div class='form-group'>
+    <label for='title'>Title:</label>
+    {{ form.subject }}
+  </div>
+  <div class='form-group'>
+    <label for='Message'>Message:</label>
+    {{ form.message }}
+  </div>
+  <div class='text-center'>
+    <button type='submit' class='btn btn-secondary'>Send</button>
+  </div>
+</form>
+{% endblock %}
